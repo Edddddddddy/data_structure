@@ -1,0 +1,9 @@
+﻿  createGraphInAL.cpp
+f:\conclution\wdalgorithm\wdalgorithm\creategraphinal.cpp(46): warning C4477: “scanf”: 格式字符串“%c”需要类型“char *”的参数，但可变参数 1 拥有了类型“int *”
+f:\conclution\wdalgorithm\wdalgorithm\creategraphinal.cpp(82): warning C4477: “fscanf”: 格式字符串“%hu”需要类型“unsigned short *”的参数，但可变参数 1 拥有了类型“char *”
+  f:\conclution\wdalgorithm\wdalgorithm\creategraphinal.cpp(82): note: 请考虑在格式字符串中使用“%hhu”
+f:\conclution\wdalgorithm\wdalgorithm\creategraphinal.cpp(82): warning C4477: “fscanf”: 格式字符串“%hu”需要类型“unsigned short *”的参数，但可变参数 2 拥有了类型“char *”
+  f:\conclution\wdalgorithm\wdalgorithm\creategraphinal.cpp(82): note: 请考虑在格式字符串中使用“%hhu”
+  dutchFlag.cpp
+  正在生成代码...
+  WDAlgorithm.vcxproj -> F:\conclution\WDAlgorithm\Debug\WDAlgorithm.exe
