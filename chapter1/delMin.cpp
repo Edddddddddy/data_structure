@@ -1,21 +1,19 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-void delMin(int *arr, int len){
-    if(!len){
-        printf("数组为空");
-        return;
-    }
-    int min = *arr, minPos = 0;
-    for(int i = 0; i < len; i++){
-        if(min > *(arr+i)){
-            min = *(arr + i);
+int delMin(int *arr, int len){
+    if(len == 0) return 0;
+    int pos = 0;
+    int value = *arr, minPos = 0;
+    for (int i = 0; i < len; i++){
+        if(value > *(arr + i)) {
+            value = *(arr + i);
             minPos = i;
         }
     }
-    //找到最小值元素后，将最后一个元素
     *(arr + minPos) = *(arr + len - 1);
     *(arr + len - 1) = NULL;
+    return value;
 }
 
 int main(){
@@ -31,7 +29,10 @@ int main(){
         printf("%d", arr[i]);
     }
 
-    delMin(arr, n);
+    int value = delMin(arr, n);
+
+    printf("结果是 %d", value);
+
     printf("\n");
     for(int i = 0; i < n; i++){
         printf("%d", arr[i]);

@@ -2,8 +2,7 @@
 #include <stdlib.h>
 #include <stdbool.h>
 #define TYPE int
-#define TYPE biTree
-// #define TYPE int
+// #define TYPE biTree
 // #define TYPE char
 // #define TYPE Recursion
 
