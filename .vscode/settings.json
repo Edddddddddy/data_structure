@@ -4,5 +4,6 @@
         "stdlib.h": "c",
         "cstdlib": "c",
         "cinttypes": "c"
-    }
+    },
+    "C_Cpp.errorSquiggles": "Disabled"
 }
