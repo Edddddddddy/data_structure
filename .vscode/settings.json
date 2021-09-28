@@ -1,0 +1,8 @@
+{
+    "files.associations": {
+        "__config": "cpp",
+        "stdlib.h": "c",
+        "cstdlib": "c",
+        "cinttypes": "c"
+    }
+}
