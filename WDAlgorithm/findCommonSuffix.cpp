@@ -46,34 +46,34 @@ Link *findCommonSuffix(Link *h1,Link *h2) {
 	return p;
 	
 }
-//int main() {
-//	struct Link *h1,*h2,*com,*p1,*p2,*start;
-//	Link *createLink(int);
-//	char p[] = "letter";//数据类型，char
-//	h1 = createLink(1);
-//	h2 = createLink(1);
-//	com = createLink(1);//公共部分
-//	p1 = h1->next;
-//	p2 = h2->next;
-//	while (p1->next)p1 = p1->next;//到达链尾
-//	while (p2->next)p2 = p2->next;
-//	p1->next = com->next;//链接公共部分
-//	p2->next = com->next;
-//	p1 = h1->next;
-//	p2 = h2->next;
-//	while (p1) {
-//		printf("%c",p1->letter);
-//		p1 = p1->next;
-//
-//	}
-//	printf("\n");
-//	while (p2) {
-//		printf("%c",p2->letter);
-//		p2 = p2->next;
-//
-//	}
-//	printf("\n");
-//	start=findCommonSuffix(h1,h2);
-//	printf("%c",start->letter);
-//	return  0;
-//}
+int main() {
+	struct Link *h1,*h2,*com,*p1,*p2,*start;
+	Link *createLink(int);
+	char p[] = "letter";//数据类型，char
+	h1 = createLink(1);
+	h2 = createLink(1);
+	com = createLink(1);//公共部分
+	p1 = h1->next;
+	p2 = h2->next;
+	while (p1->next)p1 = p1->next;//到达链尾
+	while (p2->next)p2 = p2->next;
+	p1->next = com->next;//链接公共部分
+	p2->next = com->next;
+	p1 = h1->next;
+	p2 = h2->next;
+	while (p1) {
+		printf("%c",p1->letter);
+		p1 = p1->next;
+
+	}
+	printf("\n");
+	while (p2) {
+		printf("%c",p2->letter);
+		p2 = p2->next;
+
+	}
+	printf("\n");
+	start=findCommonSuffix(h1,h2);
+	printf("%c",start->letter);
+	return  0;
+}

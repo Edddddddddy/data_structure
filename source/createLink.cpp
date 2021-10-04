@@ -1,6 +1,6 @@
 #include <stdlib.h>
 #include <stdio.h>
-
+#include <typeinfo>
 
 
 struct Link{
@@ -59,10 +59,24 @@ Link* createLink(int num){
     return head;
 }
 
-void printLink(Link *l){
-    printf("打印链表： ");
-    while (l->next){
-        printf("%d ", l->next->type.data);
-        l = l->next;
+void printLink(Link *l, int num){
+    struct Link *p = l->next;
+    printf("打印链表：");
+    if (!p) {
+        printf("链表为空！\n");
+        return ;
     }
+    if(num == 1){
+        while (p){
+            printf("%c ", p->type.letter);
+            p = p->next;
+        }
+    }
+    else if (num == 0){
+        while (p){
+            printf("%d ", p->type.data);
+            p = p->next;
+        }
+    }
+    printf("\n");
 }
