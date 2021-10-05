@@ -3,7 +3,19 @@
         "__config": "cpp",
         "stdlib.h": "c",
         "cstdlib": "c",
-        "cinttypes": "c"
+        "cinttypes": "c",
+        "__split_buffer": "cpp",
+        "array": "cpp",
+        "deque": "cpp",
+        "string_view": "cpp",
+        "iterator": "cpp",
+        "list": "cpp",
+        "queue": "cpp",
+        "stack": "cpp",
+        "string": "cpp",
+        "unordered_map": "cpp",
+        "vector": "cpp",
+        "ranges": "cpp"
     },
     "C_Cpp.errorSquiggles": "Disabled"
 }
