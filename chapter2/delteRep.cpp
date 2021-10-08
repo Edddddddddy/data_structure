@@ -1,6 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include "../source/createLink.cpp"
+#include "../include/createLink.cpp"
 
 /**
  * @brief 删除有序线性表中重复的元素

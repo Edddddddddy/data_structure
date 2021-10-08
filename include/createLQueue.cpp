@@ -2,15 +2,21 @@
 /*
     该文件用来创建一个链表形式的队列 创建 判空 入队 出队
 */
+#define TYPE char
+// #define TYPE int
+#include <stdio.h>
+#include <stdlib.h>
+
 
 struct Link {
-    int node;
+    TYPE node;
     struct Link *next;
 };
 
-struct LinkQueue {
+struct LQueue {
     struct Link *front, *rear;
 };
+
 
 //创建一个带头节点的空链表
 Link *createLink(){
@@ -20,30 +26,31 @@ Link *createLink(){
 }
 
 //初始化队列
-LinkQueue *createQueue(){
+LQueue *createLQueue(){
     struct Link *h;
-    struct LinkQueue *lq = (struct LinkQueue*)malloc(sizeof(struct LinkQueue));
+    struct LQueue *lq = (struct LQueue*)malloc(sizeof(struct LQueue));
     h = createLink();
     lq->front = lq->rear = h;
     return lq;
 }
 
 //判断是否为空队列
-bool isEmpty(LinkQueue *lq){
+bool isEmpty(LQueue *lq){
     return lq->front == lq->rear;
 }
 
 //入队
-bool enQueue(LinkQueue *lq, int data){  //队尾插入  
+bool enQueue(LQueue *lq, TYPE data){  //队尾插入  
     struct Link *newD = (struct Link*)malloc(sizeof(struct Link));
     newD->node = data;
     lq->rear->next = newD;
     lq->rear = newD;
+    lq->rear->next = NULL;
     return true;
 }
 
 //出队
-bool deQueue(LinkQueue *lq, int *data){
+bool deQueue(LQueue *lq, TYPE *data){
     //先判空
     if (isEmpty(lq)) return false;
     struct Link *p = lq->front->next;

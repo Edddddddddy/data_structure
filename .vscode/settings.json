@@ -15,7 +15,10 @@
         "string": "cpp",
         "unordered_map": "cpp",
         "vector": "cpp",
-        "ranges": "cpp"
+        "ranges": "cpp",
+        "random": "cpp",
+        "memory_resource": "cpp",
+        "*.ds_store": "cpp"
     },
     "C_Cpp.errorSquiggles": "Disabled"
 }

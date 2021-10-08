@@ -1,6 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include "../source/createDouLoopLink.cpp"
+#include "../include/createDouLoopLink.cpp"
 
 void isSymmetry(Link *h){
     struct Link *pre = h->pre, *next = h->next;

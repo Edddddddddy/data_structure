@@ -1,6 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include "../source/createLink.cpp"
+#include "../include/createLink.cpp"
 
 void deleteRepAbs(struct Link *h){
     struct Link *p = h->next, *pre = h, *q;

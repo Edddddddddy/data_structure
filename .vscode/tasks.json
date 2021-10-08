@@ -7,6 +7,7 @@
             "args": [
                 "-g",
                 "${file}",
+                // "*.cpp",
                 "-o",
                 "/${fileDirname}/debug/${fileBasenameNoExtension}"
             ],

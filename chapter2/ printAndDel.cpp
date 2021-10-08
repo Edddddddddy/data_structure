@@ -1,6 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include "../source/createLink.cpp"
+#include "../include/createLink.cpp"
 
 /**
  * @brief 遍历n次，每次输出最小值并且free

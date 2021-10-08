@@ -1,6 +1,6 @@
 #include <stdlib.h>
 #include <stdio.h>
-#include "../source/createLink.cpp"
+#include "../include/createLink.cpp"
 
 void reverseOutput(Link *p){
     if (p == NULL) return;

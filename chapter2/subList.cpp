@@ -1,6 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include "../source/createLink.cpp"
+#include "../include/createLink.cpp"
 
 /**
  * @brief 判断hb是否为ha的子序列

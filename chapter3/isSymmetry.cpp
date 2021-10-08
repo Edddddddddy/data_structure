@@ -9,8 +9,8 @@
 
 #include <stdio.h>
 #include <stdlib.h>
-#include "../source/createStack.cpp"
-#include "../source/createLink.cpp"
+#include "../include/createStack.cpp"
+#include "../include/createLink.cpp"
 
 void isSymmetry(Link *h){
     int size = 0;

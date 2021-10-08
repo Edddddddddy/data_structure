@@ -1,6 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include "../source/createLink.cpp"
+#include "../include/createLink.cpp"
 
 int findReciprocal(Link *h, int k){
     struct Link *p = h->next, *q = h->next;

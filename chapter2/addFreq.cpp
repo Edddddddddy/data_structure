@@ -1,7 +1,7 @@
 
 #include <stdio.h>
 #include <stdlib.h>
-#include "../source/createDouLink.cpp"
+#include "../include/createDouLink.cpp"
 
 /**
  * @brief 用户输入要查找的x，此方法根据每个节点被访问次数记录freq对链表进行降序排序

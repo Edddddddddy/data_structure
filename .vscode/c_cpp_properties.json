@@ -6,7 +6,8 @@
                 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include",
                 "/usr/local/include",
                 "/Library/Developer/CommandLineTools/usr/lib/clang/10.0.0/include",
-                "/Library/Developer/CommandLineTools/usr/include"
+                "/Library/Developer/CommandLineTools/usr/include",
+                "/Users/apple/data_structure/include"
             ],
             "defines": [],
             "macFrameworkPath": [],

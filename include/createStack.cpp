@@ -1,9 +1,9 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <stdbool.h>
-#define TYPE int
+// #define TYPE int
 // #define TYPE biTree
-// #define TYPE char
+#define TYPE char
 // #define TYPE Recursion
 
 struct biTree {
@@ -51,7 +51,6 @@ bool pop(Stack *stack) {
 	if (empty(stack)) return false;
 	stack->top--;
 	return true;
-
 }
 
 //查看栈顶元素
@@ -70,7 +69,7 @@ void destory(Stack *stack) {
 bool contain(Stack *stack, TYPE r) {
 	if (empty(stack)) return false;
 	for (int i = stack->top; i >= 0; i--) {
-		if (r == *(stack->arr + i) ){//疯了，我居然把==写成了=
+		if (r == *(stack->arr + i) ){
 			return true;
 		}
 	}

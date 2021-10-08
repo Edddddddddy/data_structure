@@ -1,27 +1,27 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include "../source/createLink.cpp"
+#include "../include/createLink.cpp"
 
 void bubbleSort(Link *h){
     int flag = 0;   
-    int count = 0;  //Á´±í³¤¶È
+    int count = 0;  //ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 
     struct Link *pre = h, *p = h->next, *r;
-    while(p){   //Çó³¤¶È
+    while(p){   //ï¿½ó³¤¶ï¿½
         count++;
         p = p->next;
     }
     p = h->next;
     for(int i = 0; i < count; i++){
-        flag = 0;   //³õÊ¼»¯¸Ä¶¯tagÎª0
-        while(p->next){ //´ÓµÚi¸öÊý×Ö¿ªÊ¼
+        flag = 0;   //ï¿½ï¿½Ê¼ï¿½ï¿½ï¿½Ä¶ï¿½tagÎª0
+        while(p->next){ //ï¿½Óµï¿½iï¿½ï¿½ï¿½ï¿½ï¿½Ö¿ï¿½Ê¼
             if(p->type.data > p->next->type.data){
                 r = p->next->next;
                 pre->next = p->next;
                 p->next->next = p;
                 pre = p->next;
                 p->next = r;
-                flag = 1;   //ÓÐ¸Ä¶¯
+                flag = 1;   //ï¿½Ð¸Ä¶ï¿½
             }
             else{
                 pre = pre->next;
@@ -29,7 +29,7 @@ void bubbleSort(Link *h){
             }
         }
         if(!flag)break;
-        pre = h;    //ÖØÐÂ±éÀú
+        pre = h;    //ï¿½ï¿½ï¿½Â±ï¿½ï¿½ï¿½
         p = h->next;
     }
 

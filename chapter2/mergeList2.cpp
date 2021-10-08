@@ -1,6 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include "../source/createLink.cpp"
+#include "../include/createLink.cpp"
 
 /**
  * @brief 将两个有序链表ha，hb，合并到ha中,合并后的链表递减，采用头插法

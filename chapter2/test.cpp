@@ -1,6 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include "../source/createLink.cpp"
+#include "../include/createLink.cpp"
 
 void reverse(struct Link *h){   //头插法逆置链表
     struct Link *p = h->next, *q;

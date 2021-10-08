@@ -1,6 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include "../source/createLink.cpp"
+#include "../include/createLink.cpp"
 
 void deleteNum(Link *h, int min, int max){
     struct Link *p = h->next, *pre = h, *q;

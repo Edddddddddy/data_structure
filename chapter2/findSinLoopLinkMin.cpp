@@ -1,6 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include "../source/createSinLoopLink.cpp"
+#include "../include/createSinLoopLink.cpp"
 
 void inputAndDeleteLink(struct Link *h){
     struct Link *pre = h, *minpre = h, *p = h->next, *min = h->next, *r;

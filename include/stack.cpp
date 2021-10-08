@@ -48,5 +48,5 @@ bool pop(Stack *stack){
 //查看栈顶元素
 TYPE *top(Stack *stack){
     if(isEmpty(stack)) return false;
-    return s->arr + s->top;
+    return *(s->arr + s->top);
 }

@@ -1,6 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include "../source/createLink.cpp"
+#include "../include/createLink.cpp"
 
 void divide(Link *la, Link* lb){
     int flag = 0;   //0 为偶数，1位奇数
