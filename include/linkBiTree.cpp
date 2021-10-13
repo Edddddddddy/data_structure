@@ -20,11 +20,10 @@ biTree *create(biTree *T){
     if(data != '#'){
         T = (biTree *)malloc(sizeof(biTree));
         T->data = data;
+        T->lchild = NULL;   //别漏了
+        T->rchild = NULL;
         T->lchild = create(T->lchild);
         T->rchild = create(T->rchild);
-    }
-    else {
-        return NULL;
     }
     return T;
 }

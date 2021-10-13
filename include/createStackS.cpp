@@ -8,7 +8,7 @@
 
 
 struct Stack {
-    biTree *arr;
+    biTree* arr;
     int len;
     int top;
 };
@@ -45,11 +45,23 @@ bool pop(Stack *s){
 }
 
 biTree *top(Stack *s){
+    if(empty(s)) return NULL;
     return (s->arr + s->top);
 }
 
 void destory(Stack *s){
     free(s->arr);
     free(s);
+}
+
+//判断是否含有某个元素
+bool contain(Stack *s, biTree *r) {
+	if (empty(s)) return false;
+	for (int i = s->top; i >= 0; i--) {
+		if (r == (s->arr + i) ){
+			return true;
+		}
+	}
+	return false;
 }
 

@@ -1,67 +1,67 @@
-///*
-//	ï¿½Ô¸ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Â¶ï¿½ï¿½Ï¡ï¿½ï¿½ï¿½ï¿½Òµï¿½ï¿½ï¿½Ä²ï¿½Î±ï¿½ï¿½ï¿½ï¿½ã·¨
-//	ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
-//		ï¿½ï¿½ï¿½ï¿½Ö»ï¿½ï¿½Òªï¿½Ú²ï¿½Î±ï¿½ï¿½ï¿½ï¿½Ä»ï¿½ï¿½ï¿½ï¿½Ï¼ï¿½ï¿½ï¿½Õ»ï¿½ï¿½Ê¹ï¿½Ã£ï¿½ï¿½ï¿½ï¿½ï¿½Ã¿ï¿½Î³ï¿½ï¿½Óºï¿½ï¿½ï¿½ï¿½ï¿½Ý½ï¿½ï¿½ï¿½ï¿½ï¿½Õ»ï¿½ï¿½ï¿½ï¿½ï¿½Ð¿ï¿½ï¿½ï¿½Ê±ï¿½ï¿½ï¿½ï¿½È¥ï¿½ï¿½ï¿½Î·ï¿½ï¿½ï¿½Õ»ï¿½ï¿½Ôªï¿½Ø£ï¿½ï¿½ï¿½ï¿½É´ïµ½Òªï¿½ï¿½
-//
-//*/
-//struct biTree {
-//	char data;
-//	struct biTree *lchild;
-//	struct biTree *rchild;
-//};
-//struct Squeue {
-//	biTree *arr;
-//	int front, rear;
-//};
-//struct Stack {
-//	biTree *arr;
-//	int len;
-//	int top;
-//};
-//#include <stdio.h>
-//#include <stdlib.h>
-//void levelOrder2(biTree *T, Squeue *sq, int maxSize) {
-//	struct Stack *s = (struct Stack *)malloc(sizeof(struct Stack));
-//	struct biTree *p = T;
-//	struct biTree *r = (struct biTree *)malloc(sizeof(struct biTree));
-//	bool enQueue(Squeue *, biTree *, int);
-//	bool isEmpty(Squeue *);
-//	bool deQueue(Squeue *, biTree **, int);
-//
-//	Stack *createStack(int);
-//	bool push(Stack *,biTree *);
-//	bool empty(Stack *);
-//	biTree *top(Stack *);
-//	bool pop(Stack *);
-//
-//	s = createStack(maxSize);
-//	enQueue(sq, p, maxSize);
-//	while (!isEmpty(sq)) {
-//		deQueue(sq, &r, maxSize);
-//		push(s,r);
-//		if (r->lchild)enQueue(sq, r->lchild, maxSize);
-//		if (r->rchild)enQueue(sq, r->rchild, maxSize);
-//	}
-//	while (!empty(s)) {
-//		r = top(s);
-//		printf("%c ",r->data);
-//		pop(s);
-//	}
-//
-//}
-//int main() {
-//	int count = 0;
-//	struct biTree *T = (struct biTree *)malloc(sizeof(struct biTree));
-//	struct Squeue *sq = (struct Squeue *)malloc(sizeof(struct Squeue));
-//
-//	biTree *create(biTree *);
-//	void nodeNum(biTree *, int *);
-//
-//	Squeue *createQueue(int);
-//	T = create(T);//ï¿½ï¿½ï¿½ï¿½Ò»ï¿½Å¶ï¿½ï¿½ï¿½ï¿½ï¿½
-//	nodeNum(T, &count);//Í³ï¿½Æ¶ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Úµï¿½ï¿½ï¿½ï¿½
-//	sq = createQueue(count);
-//
-//	levelOrder2(T, sq, count);
-//	return 0;
-//}
+/*
+	ÊÔ¸ø³ö¶þ²æÊ÷µÄ×ÔÏÂ¶øÉÏ¡¢´ÓÓÒµ½×óµÄ²ã´Î±éÀúËã·¨
+	·ÖÎö£º
+		ÎÒÃÇÖ»ÐèÒªÔÚ²ã´Î±éÀúµÄ»ù´¡ÉÏ¼ÓÈëÕ»µÄÊ¹ÓÃ£¬ÎÒÃÇÃ¿´Î³ö¶ÓºóµÄÊý¾Ý½«ÆäÈëÕ»£¬¶ÓÁÐ¿ÕÁËÊ±£¬ÔÙÈ¥ÒÀ´Î·ÃÎÊÕ»ÖÐÔªËØ£¬¼´¿É´ïµ½ÒªÇó
+
+*/
+struct biTree {
+	char data;
+	struct biTree *lchild;
+	struct biTree *rchild;
+};
+struct Squeue {
+	biTree *arr;
+	int front, rear;
+};
+struct Stack {
+	biTree *arr;
+	int len;
+	int top;
+};
+#include <stdio.h>
+#include <stdlib.h>
+void levelOrder2(biTree *T, Squeue *sq, int maxSize) {
+	struct Stack *s = (struct Stack *)malloc(sizeof(struct Stack));
+	struct biTree *p = T;
+	struct biTree *r = (struct biTree *)malloc(sizeof(struct biTree));
+	bool enQueue(Squeue *, biTree *, int);
+	bool isEmpty(Squeue *);
+	bool deQueue(Squeue *, biTree **, int);
+
+	Stack *createStack(int);
+	bool push(Stack *,biTree *);
+	bool empty(Stack *);
+	biTree *top(Stack *);
+	bool pop(Stack *);
+
+	s = createStack(maxSize);
+	enQueue(sq, p, maxSize);
+	while (!isEmpty(sq)) {
+		deQueue(sq, &r, maxSize);
+		push(s,r);
+		if (r->lchild)enQueue(sq, r->lchild, maxSize);
+		if (r->rchild)enQueue(sq, r->rchild, maxSize);
+	}
+	while (!empty(s)) {
+		r = top(s);
+		printf("%c ",r->data);
+		pop(s);
+	}
+
+}
+int main() {
+	int count = 0;
+	struct biTree *T = (struct biTree *)malloc(sizeof(struct biTree));
+	struct Squeue *sq = (struct Squeue *)malloc(sizeof(struct Squeue));
+
+	biTree *create(biTree *);
+	void nodeNum(biTree *, int *);
+
+	Squeue *createQueue(int);
+	T = create(T);//´´½¨Ò»¿Å¶þ²æÊ÷
+	nodeNum(T, &count);//Í³¼Æ¶þ²æÊ÷½Úµã¸öÊý
+	sq = createQueue(count);
+
+	levelOrder2(T, sq, count);
+	return 0;
+}
