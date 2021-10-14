@@ -6,16 +6,15 @@
 
 #include <stdio.h>
 #include <stdlib.h>
+#if !defined(TYPE)
+#define TYPE int
+#endif // TYPE
 
 
-// struct biTree{
-//     char data;
-//     struct biTree *lchild;
-//     struct biTree *rchild;
-// };
+
 
 struct SQueue{
-    char *arr;
+    TYPE *arr;
     int front;
     int rear;
 };
@@ -25,20 +24,12 @@ struct SQueue{
 SQueue *createSQueue(int size){
     //实例化和分配空间
     struct SQueue *sq = (struct SQueue*)malloc(sizeof(struct SQueue));
-    sq->arr = (struct char*)malloc(sizeof(char)*size);
+    sq->arr = (TYPE*)malloc(sizeof(TYPE)*size);
     sq->front = 0;
     sq->rear = 0;
     return sq;
 }
 
-// SQueue *createSQueueS(int size){
-//     //实例化和分配空间
-//     struct SQueue *sq = (struct SQueue*)malloc(sizeof(struct SQueue));
-//     sq->arr = (struct biTree*)malloc(sizeof(biTree)*size);
-//     sq->front = 0;
-//     sq->rear = 0;
-//     return sq;
-// }
 
 //判断队满
 bool isFull(SQueue *sq, int size){
@@ -58,15 +49,7 @@ bool enQueue(SQueue *sq, TYPE data, int size){
     return true;
 }
 
-// //入队（二叉节点）
-// bool enQueueS(SQueue *sq, biTree *p, int size){
-//     if(isFull(sq, size))return false;
-//     (sq->arr + sq->rear)->data = p ? p->data : '#'; //若p为NULL则无法入队
-//     (sq->arr + sq->rear)->lchild = p ? p->lchild : NULL;
-//     (sq->arr + sq->rear)->rchild = p ? p->rchild : NULL;
-//     sq->rear = (sq->rear + 1) % size;
-//     return true;
-// }
+
 
 
 //出队 取出数据
@@ -76,16 +59,6 @@ bool deQueue(SQueue *sq, TYPE *data, int size){
     sq->front = (sq->front + 1) % size;
     return true;
 }
-
-// //出队（二叉节点）
-// bool deQueueS(SQueue *sq, biTree *p, int size){
-//     if(isEmpty(sq))return false;
-//     p->data = (sq->arr + sq->front)->data;
-//     p->lchild = (sq->arr + sq->front)->lchild;
-//     p->rchild = (sq->arr + sq->front)->rchild;
-//     sq->front = (sq->front + 1) % size;
-//     return true;
-// }
 
 
 //统计队列元素

@@ -6,7 +6,6 @@
 #include <stdlib.h>
 
 struct biTree{
-    // char data;
     int data;
     struct biTree *lchild;
     struct biTree *rchild;
@@ -14,13 +13,10 @@ struct biTree{
 
 //先序创建
 biTree *create(biTree *T){
-    // char data;
     int data;
     printf("请输入当前节点值：data=");
-    // scanf("%c", &data);
-    scanf("%s", &data);
-    getchar();
-    if(data != '#'){
+    scanf("%d", &data);
+    if(data != -1){
         T = (biTree *)malloc(sizeof(biTree));
         T->data = data;
         T->lchild = NULL;   //别漏了
@@ -34,7 +30,7 @@ biTree *create(biTree *T){
 //前序递归遍历
 void preOrder(biTree *T){
     if(T != NULL){
-        printf("%c ", T->data);
+        printf("%d ", T->data);
         preOrder(T->lchild);
         preOrder(T->rchild);
     }
@@ -44,7 +40,7 @@ void preOrder(biTree *T){
 void inOrder(biTree *T){
     if(T != NULL){
         inOrder(T->lchild);
-        printf("%c ", T->data);
+        printf("%d ", T->data);
         inOrder(T->rchild);
     }
 }
@@ -54,7 +50,7 @@ void postOrder(biTree *T){
     if(T!=NULL){
         postOrder(T->lchild);
         postOrder(T->lchild);
-        printf("%c ", T->data);
+        printf("%d ", T->data);
     }
 }
 
