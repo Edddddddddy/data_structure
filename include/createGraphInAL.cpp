@@ -29,30 +29,30 @@ typedef struct {
 #include "./createSQueue.cpp"
 
 
-void createGraph(ALGraph *G){
-    int e,v,vi,vj,w;
-    printf("请输入图的边数与结点数（以空格分开）：");
-	scanf("\n%d %d", &e, &v);
-    G->numE = e;
-    G->numV = v;
-    printf("请一次输入顶点信息：\n");
-    for (int i = 0; i < G->numV; i++){
-        printf("请输入第%d个结点信息：", i+1);
-        scanf("\n%c", &G->adjlist[i].info);
-        G->adjlist[i].firstEdge = NULL;
-    }
+// void createGraph(ALGraph *G){
+//     int e,v,vi,vj,w;
+//     printf("请输入图的边数与结点数（以空格分开）：");
+// 	scanf("\n%d %d", &e, &v);
+//     G->numE = e;
+//     G->numV = v;
+//     printf("请一次输入顶点信息：\n");
+//     for (int i = 0; i < G->numV; i++){
+//         printf("请输入第%d个结点信息：", i+1);
+//         scanf("\n%c", &G->adjlist[i].info);
+//         G->adjlist[i].firstEdge = NULL;
+//     }
 
-    printf("请输入边表信息：\n");
-    for (int i = 0; i < G->numE; i++) {
-		printf("请输入边（vi，vj）的顶点序号及其权值（以空格分开）：");
-		scanf("%d %d %d", &vi, &vj, &w);
-        EdgeNode *e = (EdgeNode *)malloc(sizeof(EdgeNode *));
-        e->index = vj - 1;
-        e->weight = w;
-        e->next = G->adjlist[vi - 1].firstEdge;
-        G->adjlist[vi - 1].firstEdge = e;
-    }
-}
+//     printf("请输入边表信息：\n");
+//     for (int i = 0; i < G->numE; i++) {
+// 		printf("请输入边（vi，vj）的顶点序号及其权值（以空格分开）：");
+// 		scanf("%d %d %d", &vi, &vj, &w);
+//         EdgeNode *e = (EdgeNode *)malloc(sizeof(EdgeNode *));
+//         e->index = vj - 1;
+//         e->weight = w;
+//         e->next = G->adjlist[vi - 1].firstEdge;
+//         G->adjlist[vi - 1].firstEdge = e;
+//     }
+// }
 
 void createGraphInFile(ALGraph *G){ //从文件读取创建
     FILE *fp = NULL;
@@ -74,7 +74,7 @@ void createGraphInFile(ALGraph *G){ //从文件读取创建
     vertex = (char *)malloc(sizeof(char *)*G->numV);    //该数组专门用来存储顶点信息（名称）
 
     //输入信息
-    for(int i = 0; i <= G->numE; i++){  //开始获取第二行开始的信息
+    for(int i = 0; i < G->numE; i++){  //开始获取第二行开始的信息
         if(i == 0){ //获取第二行的是顶点信息
             fgets(ev, 4, fp);   //之前最后一个回车没有获取，此处获取回车
             //获取第三行
@@ -99,23 +99,50 @@ void createGraphInFile(ALGraph *G){ //从文件读取创建
             //头插法插入
             e->next = G->adjlist[atoi(&arc[0])-1].firstEdge;
             G->adjlist[atoi(&arc[0])-1].firstEdge = e;
+
+
+            //下面与上面相似，目的在于构建无向图
+			//EdgeNode *otherE = (EdgeNode *)malloc(sizeof(struct EdgeNode ));
+			//otherE->index = atoi(&arc[0]) - 1;//数组下标要减一
+			//otherE->weight = atoi(&arc[4]);
+			//otherE->next = G->adjlist[atoi(&arc[2]) - 1].firstEdge;
+			//G->adjlist[atoi(&arc[2]) - 1].firstEdge = otherE;
         }
     }
     fclose(fp);
 }
 
-void dispGraph(ALGraph *G){
-    for(int i = 0; i < G->numV; i++){
-        int j = i;
-        printf("%c-->", G->adjlist[j].info);
-        EdgeNode *p = G->adjlist[j].firstEdge;
-        while(p){
-            printf("(%d)%c-->", p->weight, G->adjlist[p->index].info);
-            p = p->next;
-        }
-        printf("^\n");
-    }
+/**
+ * @brief 输出最小生成树
+ * 
+ * @param G 
+ * @param weights 
+ */
+void outPut(ALGraph *G, int **weights){
+    //遍历二维数组，打印有权值的边
+    for (int i = 0; i < G->numV; i++)
+        for (int j = i; j < G->numV; j++)
+            if (weights[i][j] != 0)
+                printf("%c->%c(%d)\n", G->adjlist[i].info, G->adjlist[j].info, weights[i][j]);
 }
+
+/**
+ * @brief 输出邻接表
+ * 
+ * @param G 
+ */
+// void dispGraph(ALGraph *G){
+//     for(int i = 0; i < G->numV; i++){
+//         int j = i;
+//         printf("%c-->", G->adjlist[j].info);
+//         EdgeNode *p = G->adjlist[j].firstEdge;
+//         while(p){
+//             printf("(%d)%c-->", p->weight, G->adjlist[p->index].info);
+//             p = p->next;
+//         }
+//         printf("^\n");
+//     }
+// }
 
 
 //广度优先

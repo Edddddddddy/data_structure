@@ -2,8 +2,12 @@
 /*
     该文件用来创建一个链表形式的队列 创建 判空 入队 出队
 */
-#define TYPE char
-// #define TYPE int
+// #define TYPE char
+#if !defined(TYPE)
+#define TYPE int
+#endif // TYPE
+
+#define TYPE int
 #include <stdio.h>
 #include <stdlib.h>
 

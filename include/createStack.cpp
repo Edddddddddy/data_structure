@@ -1,10 +1,10 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <stdbool.h>
-// #define TYPE int
-// #define TYPE biTree
+#if !defined(TYPE)
 #define TYPE char
-// #define TYPE Recursion
+#endif // TYPE
+
 
 struct biTree {
 	char data;

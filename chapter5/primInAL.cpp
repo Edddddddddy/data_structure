@@ -8,6 +8,7 @@
 #include "../include/createGraphInAL.cpp"
 
 void outPut(ALGraph *G, int **weights){
+    //遍历二维数组，打印有权值的边
     for (int i = 0; i < G->numV; i++)
         for (int j = i; j < G->numV; j++)
             if (weights[i][j] != 0)
@@ -15,6 +16,15 @@ void outPut(ALGraph *G, int **weights){
 }
 
 void prim(ALGraph *G, int start){
+    /*
+        1 创建prim和weights数组，存储已加入结点，更新权值
+        2 加入所有结点之前一直迭代
+        3 每次迭代遍历已经装入prims的结点
+        4 找到一个新节点，使得新节点与原树连接的边权值最小，并且更新所有加入这个新的边后的所有weights值
+            （实现方法是遍历所有已加入结点，找到与之相连的所有邻接边中最小的&&边所指结点未加入）
+
+    */
+
     //开辟空间，存储顶点序列，权值
     int *prims = (int *)malloc(sizeof(int )*G->numV);   //存储最终得到的序列
     int **weights = (int **)malloc(sizeof(int *)*G->numV);  //二维数组，存储各个点的权值
